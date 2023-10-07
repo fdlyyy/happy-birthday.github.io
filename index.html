@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun</title>
+    <style>
+        body {
+            background-color: #fce4ec;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            width: 80px;
+            height: 50px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            transition-delay: 0.1s;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: rgb(211, 211, 211);
+        }
+
+        #birthday-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        h1 {
+            color: #ff4081;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        #confetti {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .confetti {
+            width: 10px;
+            height: 10px;
+            background-color: #ff4081;
+            position: absolute;
+            border-radius: 50%;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(0, -100%);
+                opacity: 0;
+            }
+        }
+
+        img {
+            border-radius: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ff0055;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="show-card-button">Klik Disini</button>
+    <div id="birthday-card">
+        <audio id="background-music" autoplay>
+            <source src="bgs.mp3" type="audio/mpeg">
+        </audio>
+        
+        <img src="img.jpeg" alt="Foto Ulang Tahun" width="40%">
+        <h1>Selamat Ulang Tahun</h1>
+        <p>Gaa kerasa waktu cepat berlalu, kini usia kamuu bertambah satuu, hari ini mungkin special buat kamuu, tapi
+            maaf gaada kado indah yang bisa aku kasi buat kamu, selain doa yang aku langitkan buat kamuu. semoga hati
+            kamuu luas dan lapang karena ada banyak hati yang sayang sama kamuu, semoga bahagia dan kebaikan selalu
+            menghampiri kamuu, semoga dikuatkan langkah demi langkah yang kamu rangkai begitu indahh. </p>
+        <p>Selamat ulang tahun Afifah Oktaviani Ramadhani!!</p>
+        <h2><a href="flower.html">Kado nya ada disini</a></h2>
+        <audio id="audioControls" controls>
+            <source src="vn.ogg">
+        </audio>
+    </div>
+    <div id="confetti"></div>
+    <div id="confetti"></div>
+    <div id="confetti"></div>
+    <script>
+        const showCardButton = document.getElementById("show-card-button");
+        const birthdayCard = document.getElementById("birthday-card");
+        const backgroundMusic = document.getElementById("background-music");
+
+        showCardButton.addEventListener("click", function () {
+            birthdayCard.style.display = "block";
+            showCardButton.style.display = "none";
+        });
+
+        const confettiContainer = document.getElementById("confetti");
+
+        function createConfetti() {
+            const confetti = document.createElement("div");
+            confetti.className = "confetti";
+            confetti.style.left = `${Math.random() * 100}%`;
+            confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            confettiContainer.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+        setInterval(createConfetti, 500);
+    </script>
+</body>
+
+</html>
