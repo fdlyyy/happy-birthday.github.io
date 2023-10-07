@@ -88,10 +88,6 @@
 <body>
     <button id="show-card-button">Klik Disini</button>
     <div id="birthday-card">
-        <audio id="background-music" autoplay>
-            <source src="bgs.mp3" type="audio/mpeg">
-        </audio>
-
         <img src="img.jpeg" alt="Foto Ulang Tahun" width="40%">
         <h1>Selamat Ulang Tahun</h1>
         <p>Gaa kerasa waktu cepat berlalu, kini usia kamuu bertambah satuu, hari ini mungkin special buat kamuu, tapi
@@ -99,6 +95,9 @@
             kamuu luas dan lapang karena ada banyak hati yang sayang sama kamuu, semoga bahagia dan kebaikan selalu
             menghampiri kamuu, semoga dikuatkan langkah demi langkah yang kamu rangkai begitu indahh. </p>
         <p>Selamat ulang tahun Afifah Oktaviani Ramadhani!!</p>
+        <audio id="backsoundVn" controls>
+            <source src="vn.ogg">
+        </audio>
         <h2><a href="flower.html">Kado nya ada disini</a></h2>
     </div>
     <div id="confetti"></div>
@@ -107,8 +106,7 @@
     <script>
         const showCardButton = document.getElementById("show-card-button");
         const birthdayCard = document.getElementById("birthday-card");
-        const backgroundMusic = document.getElementById("background-music");
-
+        
         showCardButton.addEventListener("click", function () {
             birthdayCard.style.display = "block";
             showCardButton.style.display = "none";
